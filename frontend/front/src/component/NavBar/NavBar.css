@@ -1,0 +1,177 @@
+
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  padding:16px;
+  /* box-shadow是一个用于在元素周围添加阴影效果的 CSS 属性，水平偏移为0，垂直向下偏移1px,模糊半径，值越大，阴影的边缘越模糊，扩展半径，控制阴影的扩展程度。正值会使阴影变大（向外扩展），负值会使阴影收缩（向内收缩 */
+  box-shadow: 0 1px 3px -2px black;
+  align-items: center;
+}
+.nav-logo{
+  display: flex;
+  align-items: center;
+  /* gap 属性用于设置网格布局（Grid）或弹性盒布局（Flexbox）中的行与列之间的间距。gap: <row-gap> <column-gap>;row-gap: 定义行之间的间距。
+column-gap: 定义列之间的间距。当 gap 只使用一个值时，这个值会同时应用于行间距和列间距。 */
+  gap:10px;
+}
+.nav-logo p{
+  color:#171717;
+  font-size: 38px;
+  font-weight: 600;
+}
+.nav-menu{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap:50px;
+  color:#626262;
+  font-size: 20px;
+  font-weight: 50; 
+}
+
+.nav-menu li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:3px;
+  cursor:pointer;
+}
+
+.nav-menu hr{
+  border:none;
+  width: 80%;
+  height: 3px;
+  border-radius: 10px;
+  background-color: #FF4141;
+}
+.nav-cart-login{
+  display: flex;
+  align-items: center;
+  gap:45px;
+}
+.nav-cart-login button{
+  width:157px;
+  height:58px;
+  outline:none;
+  border:1px solid #7a7a7a;
+  border-radius:75px;
+  color:#515151;
+  font-size: 20px;
+  font-weight: 500;
+  background: white;
+  cursor: pointer;
+}
+.nav-cart-login button:active{
+  background: #f3f3f3;
+}
+.nav-cart-count{
+  width:22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -35px;
+  margin-left: -55px;
+  border-radius:15px ;
+  font-size: 14px;
+  background: red;
+  color:white 
+}
+
+@media(max-width:1280px){
+  .navbar{
+    padding: 12px 50px;
+  }
+  .nav-logo img{
+    width:40px;
+  }
+  .nav-logo p{
+     font-size: 25px;
+  }
+  .nav-menu{
+    gap:30px;
+    font-size: 16px; 
+  }
+  .nav-cart-login{
+    gap:30px;
+  }
+  .nav-cart-login button{
+    width:120px;
+    height:45px;
+    font-size: 16px;
+  }
+  .nav-cart-count{
+    margin-left: -40px;
+    font-size: 12px;
+
+  }
+}
+@media(max-width:1024px){
+    .navbar{
+      padding:12px 30px;
+    }
+    .nav-menu{
+      gap:25px;
+      font-size: 14px;    
+    }
+    .nav-cart-login button{
+      width: 80px;
+      height: 35px;
+      font-size: 14px;
+    }
+    .nav-cart-login img{
+      width: 30px;
+    }
+    .nav-cart-count{
+      width: 18px;
+      height:18px;
+    }
+}
+.nav-dropdown{
+  display: none;
+}
+@media(max-width:800px){
+  .navbar{
+      padding:5px 0px;
+  }
+  .nav-dropdown{
+    width: 40px;
+    border-radius: 50%;
+    display: block;
+    rotate: -90deg;
+    transition: 0.5s;
+  }
+  .nav-menu{
+    display: none;
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    justify-content: center ;
+    top:50px; 
+  }
+  .nav-menu-visible{
+    display: flex;
+  }
+  .nav-dropdown.open{
+    transform: rotate(90deg);
+  }
+} 
+@media(max-width:500px){
+  .navbar{
+    padding:8px 0px;
+    gap:0;
+  }
+  .nav-logo{
+    transform:scale(0.8);
+  }
+  .nav-menu{
+    height: 70px;
+    top:50px;
+  }
+  /* scale(0.8)：scale 是一个缩放变换函数。它会按比例缩放元素。0.8 表示缩放 80% 的原始大小。 */
+  .nav-cart-login{
+    transform:scale(0.8);
+  }
+}
